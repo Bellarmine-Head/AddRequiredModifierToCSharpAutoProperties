@@ -1,5 +1,5 @@
 ﻿//
-//
+// Read the repo's README before even considering to run this dangerous bit of fluff.
 //
 
 using System.Text;
@@ -67,6 +67,9 @@ namespace AddRequiredModifierToCSharpAutoProperties
         // Adds the required modifier to all appropriate auto-properties found in the specified C# file.
         // Only considers those auto-properties that are declared on one line only, and that are correctly formatted.
         // Throws one of a number of exceptions if this fails.
+        // The logic probably misses a few cases where "required" could be added, and includes a few cases where it shouldn't
+        // be added.
+        // Compile your solution afterwards, and deal with problems / edge cases manually.
         static void ProcessCsharpFile(FileInfo file)
         {
             var lines = File.ReadAllLines(file.FullName);
@@ -107,7 +110,7 @@ namespace AddRequiredModifierToCSharpAutoProperties
 
             if (modified is true)
             {
-                File.WriteAllLines(file.FullName, lines, Encoding.UTF8);
+                File.WriteAllLines(file.FullName, lines, Encoding.UTF8);  // includes BOM because all my C# files have it
             }
         }
 
@@ -128,7 +131,7 @@ namespace AddRequiredModifierToCSharpAutoProperties
             {
                 "protected",
                 "private",
-                "required",     // i.e. the property is already required
+                "required",     // i.e. the required keyword is already present
                 "static"
             };
 
