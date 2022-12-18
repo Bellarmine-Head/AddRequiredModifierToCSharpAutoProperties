@@ -2,7 +2,7 @@
   "profiles": {
     "AddRequiredModifierToCSharpAutoProperties": {
       "commandName": "Project",
-      "commandLineArgs": "C:\\Users\\Andrew\\Outthink\\src\\outthink-content-editor-website"
+      "commandLineArgs": "C:\\solution-folder-pathname-here"
     }
   }
 }
