@@ -10,6 +10,8 @@ Note that it will only operate on auto-properties that are declared on one line,
 
 This is crude stuff, but effective.
 
+You could point out myriad problems with the logic, and you'd be right.  But it helped me get most of the way there.
+
 Re-build your solution, and deal with edge cases where `required` should be removed - or - cases where the new keyword has found genuine "bugs" where a property should be initialized, but isn't being initialized.
 
 Sometimes the `[SetsRequiredMembers]` attribute should be applied to constructors.
